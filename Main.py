@@ -68,16 +68,17 @@ class Clientmy:
             print("Client: The device is busy")
             return 0
         print("Client: Client is created")
+        print("Client: Client is ready to connection")
         self.Pingrequest()
         return 1
 
     def Pingrequest(self):
-        clientport = int(input("Client: Enter Client port number: "))
+        clientport = int(input("Client: Enter Client port number:"))
         if clientport != 9000:
             print("Client: Error is occurred.")
             return
-        serverip = input("Client: Enter Server IP: ")
-        destport = int(input("Client: Enter Destination Port Number: "))
+        serverip = input("Client: Enter Server IP:")
+        destport = int(input("Client: Enter Destination Port Number:"))
         server = Servermy()
         server.ServerPinger(self.domainnumber, self.typenumber, self.protocolnum, serverip, destport)
 
